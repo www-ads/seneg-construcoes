@@ -1,7 +1,8 @@
 ```css
 /* =========================================================
    SENEG CONSTRUÇÕES
-   ESTILO PRINCIPAL
+   IDENTIDADE VISUAL — BRANCO + AMARELO
+   ESTILO FORTE / MODERNO / CONSTRUÇÃO CIVIL
    ========================================================= */
 
 
@@ -11,19 +12,20 @@
 
 :root {
 
-    --preto: #171714;
-    --preto-suave: #22221e;
+    --preto: #111111;
+    --preto-suave: #1b1b1b;
+    --grafite: #292929;
 
-    --creme: #f5f3ee;
     --branco: #ffffff;
+    --branco-suave: #f6f6f6;
 
-    --cinza: #777770;
-    --cinza-claro: #d8d6cf;
+    --amarelo: #ffc400;
+    --amarelo-forte: #ffb800;
 
-    --dourado: #b79a62;
-    --dourado-claro: #d0b57b;
+    --cinza: #666666;
+    --cinza-claro: #d9d9d9;
 
-    --borda: #dedbd2;
+    --borda: #e5e5e5;
 
 }
 
@@ -33,31 +35,26 @@
    ========================================================= */
 
 * {
-
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
-
 }
 
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 
 body {
 
-    font-family: "DM Sans", sans-serif;
+    font-family: "Montserrat", Arial, sans-serif;
 
-    background: var(--creme);
+    background: var(--branco);
 
     color: var(--preto);
 
-    line-height: 1.7;
+    line-height: 1.6;
 
 }
 
@@ -82,7 +79,7 @@ a {
 
 .container {
 
-    width: min(1180px, 90%);
+    width: min(1200px, 90%);
 
     margin: 0 auto;
 
@@ -97,27 +94,34 @@ h1,
 h2,
 h3 {
 
-    font-weight: 400;
+    font-family: "Montserrat", Arial, sans-serif;
 
-    line-height: 1.15;
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
 
 }
 
 
-h1,
+h1 {
+
+    font-weight: 900;
+
+}
+
+
 h2 {
 
-    font-family: "Playfair Display", serif;
+    font-weight: 800;
 
 }
 
 
-h1 em,
-h2 em {
+h3 {
 
-    font-style: italic;
-
-    color: var(--dourado);
+    font-weight: 700;
 
 }
 
@@ -137,9 +141,9 @@ h2 em {
 
     z-index: 100;
 
-    color: white;
+    color: var(--branco);
 
-    border-bottom: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.18);
 
 }
 
@@ -165,20 +169,20 @@ h2 em {
 
     gap: 12px;
 
-    font-size: 18px;
+    font-size: 17px;
 
-    font-weight: 600;
+    font-weight: 800;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 
 }
 
 
 .logo img {
 
-    width: 46px;
+    width: 48px;
 
-    height: 46px;
+    height: 48px;
 
     object-fit: contain;
 
@@ -191,16 +195,41 @@ h2 em {
 
     align-items: center;
 
-    gap: 36px;
+    gap: 32px;
 
 }
 
 
 .nav a {
 
-    font-size: 14px;
+    position: relative;
 
-    color: rgba(255,255,255,.85);
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: rgba(255,255,255,.88);
+
+    transition: .3s;
+
+}
+
+
+.nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--amarelo);
 
     transition: .3s;
 
@@ -209,18 +238,33 @@ h2 em {
 
 .nav a:hover {
 
-    color: white;
+    color: var(--branco);
+
+}
+
+
+.nav a:hover::after {
+
+    width: 100%;
 
 }
 
 
 .header-button {
 
-    border: 1px solid rgba(255,255,255,.6);
+    background: var(--amarelo);
 
-    padding: 11px 22px;
+    color: var(--preto);
 
-    font-size: 13px;
+    padding: 13px 23px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
 
     transition: .3s;
 
@@ -229,7 +273,7 @@ h2 em {
 
 .header-button:hover {
 
-    background: white;
+    background: var(--branco);
 
     color: var(--preto);
 
@@ -250,7 +294,7 @@ h2 em {
 
     align-items: center;
 
-    color: white;
+    color: var(--branco);
 
     overflow: hidden;
 
@@ -283,9 +327,9 @@ h2 em {
     background:
         linear-gradient(
             90deg,
-            rgba(10,10,8,.82),
-            rgba(10,10,8,.42),
-            rgba(10,10,8,.20)
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.62),
+            rgba(0,0,0,.25)
         );
 
 }
@@ -297,7 +341,7 @@ h2 em {
 
     z-index: 2;
 
-    max-width: 850px;
+    max-width: 900px;
 
     padding-top: 80px;
 
@@ -311,50 +355,43 @@ h2 em {
 
     font-size: 11px;
 
+    font-weight: 800;
+
     letter-spacing: 3px;
 
     text-transform: uppercase;
 
-    color: var(--dourado-claro);
+    color: var(--amarelo);
 
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
 }
 
 
 .hero h1 {
 
-    font-size: clamp(48px, 6vw, 82px);
+    font-size: clamp(48px, 6.5vw, 88px);
 
-    max-width: 850px;
+    max-width: 900px;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+
+    text-transform: uppercase;
 
 }
 
 
 .hero p {
 
-    max-width: 560px;
+    max-width: 580px;
 
-    font-size: 17px;
+    font-size: 16px;
 
-    font-weight: 300;
+    font-weight: 500;
 
     color: rgba(255,255,255,.82);
 
     margin-bottom: 38px;
-
-}
-
-
-.hero-buttons {
-
-    display: flex;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
 
 }
 
@@ -371,13 +408,17 @@ h2 em {
 
     justify-content: center;
 
-    min-height: 52px;
+    min-height: 54px;
 
-    padding: 0 28px;
+    padding: 0 30px;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    letter-spacing: .5px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
 
     transition: .3s;
 
@@ -386,7 +427,7 @@ h2 em {
 
 .button-light {
 
-    background: white;
+    background: var(--amarelo);
 
     color: var(--preto);
 
@@ -395,25 +436,27 @@ h2 em {
 
 .button-light:hover {
 
-    background: var(--dourado);
+    background: var(--branco);
 
-    color: white;
+    color: var(--preto);
+
+    transform: translateY(-2px);
 
 }
 
 
 .button-outline {
 
-    border: 1px solid rgba(255,255,255,.6);
+    border: 2px solid rgba(255,255,255,.75);
 
-    color: white;
+    color: var(--branco);
 
 }
 
 
 .button-outline:hover {
 
-    background: white;
+    background: var(--branco);
 
     color: var(--preto);
 
@@ -438,7 +481,9 @@ h2 em {
 
     gap: 12px;
 
-    font-size: 10px;
+    font-size: 9px;
+
+    font-weight: 700;
 
     letter-spacing: 2px;
 
@@ -457,9 +502,9 @@ h2 em {
 
     width: 45px;
 
-    height: 1px;
+    height: 2px;
 
-    background: rgba(255,255,255,.6);
+    background: var(--amarelo);
 
 }
 
@@ -472,9 +517,11 @@ h2 em {
 
     background: var(--preto);
 
-    color: white;
+    color: var(--branco);
 
     padding: 55px 0;
+
+    border-bottom: 4px solid var(--amarelo);
 
 }
 
@@ -510,22 +557,30 @@ h2 em {
 
     display: block;
 
-    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", Arial, sans-serif;
 
-    font-size: 50px;
+    font-size: 55px;
 
-    font-weight: 400;
+    font-weight: 900;
 
-    color: var(--dourado);
+    line-height: 1;
+
+    color: var(--amarelo);
 
 }
 
 
 .number-item span {
 
-    color: rgba(255,255,255,.65);
+    color: rgba(255,255,255,.7);
 
-    font-size: 13px;
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: .8px;
 
 }
 
@@ -536,14 +591,14 @@ h2 em {
 
 .section {
 
-    padding: 130px 0;
+    padding: 125px 0;
 
 }
 
 
 .company {
 
-    background: var(--creme);
+    background: var(--branco);
 
 }
 
@@ -554,14 +609,46 @@ h2 em {
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 100px;
+    gap: 90px;
 
     align-items: center;
 
 }
 
 
+.company-image {
+
+    position: relative;
+
+}
+
+
+.company-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    left: -15px;
+
+    bottom: -15px;
+
+    background: var(--amarelo);
+
+    z-index: 0;
+
+}
+
+
 .company-image img {
+
+    position: relative;
+
+    z-index: 1;
 
     width: 100%;
 
@@ -582,9 +669,11 @@ h2 em {
 .company-content h2,
 .section-heading h2 {
 
-    font-size: clamp(38px, 4vw, 58px);
+    font-size: clamp(38px, 4.5vw, 62px);
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+
+    text-transform: uppercase;
 
 }
 
@@ -592,6 +681,8 @@ h2 em {
 .company-content p {
 
     color: var(--cinza);
+
+    font-size: 15px;
 
     margin-bottom: 20px;
 
@@ -606,9 +697,15 @@ h2 em {
 
     margin-top: 20px;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    border-bottom: 1px solid var(--preto);
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+
+    border-bottom: 2px solid var(--preto);
 
     padding-bottom: 8px;
 
@@ -617,7 +714,7 @@ h2 em {
 
 .text-link span {
 
-    color: var(--dourado);
+    color: var(--amarelo-forte);
 
     font-size: 18px;
 
@@ -630,7 +727,7 @@ h2 em {
 
 .services {
 
-    background: white;
+    background: var(--branco-suave);
 
 }
 
@@ -652,16 +749,18 @@ h2 em {
 
 .section-heading > p {
 
-    max-width: 380px;
+    max-width: 400px;
 
     color: var(--cinza);
+
+    font-size: 14px;
 
 }
 
 
 .services-list {
 
-    border-top: 1px solid var(--borda);
+    border-top: 3px solid var(--preto);
 
 }
 
@@ -687,20 +786,24 @@ h2 em {
 
 .service:hover {
 
-    padding-left: 15px;
+    padding-left: 20px;
 
-    padding-right: 15px;
+    padding-right: 20px;
 
-    background: var(--creme);
+    background: var(--branco);
+
+    border-left: 5px solid var(--amarelo);
 
 }
 
 
 .service-number {
 
-    color: var(--dourado);
+    color: var(--amarelo-forte);
 
     font-size: 12px;
+
+    font-weight: 900;
 
     letter-spacing: 2px;
 
@@ -709,11 +812,11 @@ h2 em {
 
 .service h3 {
 
-    font-family: "Playfair Display", serif;
-
-    font-size: 28px;
+    font-size: 27px;
 
     margin-bottom: 8px;
+
+    text-transform: uppercase;
 
 }
 
@@ -733,7 +836,9 @@ h2 em {
 
     font-size: 25px;
 
-    color: var(--dourado);
+    font-weight: 800;
+
+    color: var(--preto);
 
 }
 
@@ -744,7 +849,7 @@ h2 em {
 
 .projects {
 
-    background: var(--creme);
+    background: var(--branco);
 
 }
 
@@ -757,7 +862,7 @@ h2 em {
 
     grid-template-rows: 350px 350px;
 
-    gap: 20px;
+    gap: 18px;
 
 }
 
@@ -793,7 +898,7 @@ h2 em {
 
 .project:hover img {
 
-    transform: scale(1.05);
+    transform: scale(1.06);
 
 }
 
@@ -806,10 +911,11 @@ h2 em {
 
     inset: 0;
 
-    background: linear-gradient(
-        transparent 45%,
-        rgba(0,0,0,.75)
-    );
+    background:
+        linear-gradient(
+            transparent 40%,
+            rgba(0,0,0,.82)
+        );
 
 }
 
@@ -824,7 +930,7 @@ h2 em {
 
     z-index: 2;
 
-    color: white;
+    color: var(--branco);
 
 }
 
@@ -835,11 +941,13 @@ h2 em {
 
     font-size: 10px;
 
+    font-weight: 800;
+
     letter-spacing: 2px;
 
     text-transform: uppercase;
 
-    color: var(--dourado-claro);
+    color: var(--amarelo);
 
     margin-bottom: 5px;
 
@@ -848,11 +956,11 @@ h2 em {
 
 .project-info strong {
 
-    font-family: "Playfair Display", serif;
-
     font-size: 23px;
 
-    font-weight: 400;
+    font-weight: 800;
+
+    text-transform: uppercase;
 
 }
 
@@ -863,7 +971,7 @@ h2 em {
 
 .process {
 
-    background: white;
+    background: var(--branco-suave);
 
 }
 
@@ -874,7 +982,7 @@ h2 em {
 
     grid-template-columns: repeat(4, 1fr);
 
-    border-top: 1px solid var(--borda);
+    border-top: 3px solid var(--preto);
 
 }
 
@@ -899,9 +1007,11 @@ h2 em {
 
 .process-item > span {
 
-    color: var(--dourado);
+    color: var(--amarelo-forte);
 
     font-size: 12px;
+
+    font-weight: 900;
 
     letter-spacing: 2px;
 
@@ -910,11 +1020,11 @@ h2 em {
 
 .process-item h3 {
 
-    font-family: "Playfair Display", serif;
-
-    font-size: 26px;
+    font-size: 24px;
 
     margin: 30px 0 15px;
+
+    text-transform: uppercase;
 
 }
 
@@ -942,7 +1052,7 @@ h2 em {
 
     align-items: center;
 
-    color: white;
+    color: var(--branco);
 
 }
 
@@ -968,7 +1078,12 @@ h2 em {
 
     inset: 0;
 
-    background: rgba(20,20,17,.72);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.58)
+        );
 
 }
 
@@ -979,18 +1094,18 @@ h2 em {
 
     z-index: 2;
 
-    max-width: 750px;
+    max-width: 800px;
 
 }
 
 
 .cta h2 {
 
-    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5.5vw, 72px);
 
-    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.05;
 
-    line-height: 1.1;
+    text-transform: uppercase;
 
     margin-bottom: 25px;
 
@@ -1016,9 +1131,11 @@ h2 em {
 
     background: var(--preto);
 
-    color: white;
+    color: var(--branco);
 
     padding-top: 75px;
+
+    border-top: 5px solid var(--amarelo);
 
 }
 
@@ -1040,7 +1157,9 @@ h2 em {
 
     font-size: 24px;
 
-    letter-spacing: 4px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
 
     margin-bottom: 20px;
 
@@ -1053,7 +1172,7 @@ h2 em {
 
     color: rgba(255,255,255,.55);
 
-    font-size: 14px;
+    font-size: 13px;
 
 }
 
@@ -1062,11 +1181,13 @@ h2 em {
 
     display: block;
 
-    color: var(--dourado);
+    color: var(--amarelo);
 
     text-transform: uppercase;
 
     font-size: 10px;
+
+    font-weight: 800;
 
     letter-spacing: 2px;
 
@@ -1092,7 +1213,7 @@ h2 em {
 
 .footer a:hover {
 
-    color: white;
+    color: var(--amarelo);
 
 }
 
@@ -1116,85 +1237,50 @@ h2 em {
 
 @media (max-width: 900px) {
 
-
     .nav {
-
         display: none;
-
     }
-
 
     .header-button {
-
         display: none;
-
     }
-
 
     .hero h1 {
-
-        font-size: 48px;
-
+        font-size: 50px;
     }
-
 
     .company-grid {
-
         grid-template-columns: 1fr;
-
         gap: 50px;
-
     }
-
 
     .company-image img {
-
         height: 450px;
-
     }
-
 
     .section-heading {
-
         display: block;
-
     }
-
 
     .section-heading > p {
-
         margin-top: 20px;
-
     }
-
 
     .projects-grid {
-
         grid-template-columns: 1fr;
-
         grid-template-rows: 400px 300px 300px;
-
     }
-
 
     .project-large {
-
         grid-row: auto;
-
     }
-
 
     .process-grid {
-
         grid-template-columns: 1fr 1fr;
-
     }
 
-
     .footer-grid {
-
         grid-template-columns: 1fr 1fr;
-
     }
 
 }
@@ -1202,146 +1288,84 @@ h2 em {
 
 @media (max-width: 600px) {
 
-
     .header-container {
-
         height: 75px;
-
     }
-
 
     .logo span {
-
-        font-size: 15px;
-
+        font-size: 14px;
     }
-
 
     .hero-content {
-
         padding-top: 50px;
-
     }
-
 
     .hero h1 {
-
-        font-size: 43px;
-
+        font-size: 42px;
     }
-
 
     .hero p {
-
         font-size: 15px;
-
     }
-
 
     .hero-scroll {
-
         display: none;
-
     }
-
 
     .numbers-grid {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .number-item {
-
         border-right: none;
-
         border-bottom: 1px solid rgba(255,255,255,.15);
-
         padding: 20px;
-
     }
-
 
     .number-item:last-child {
-
         border-bottom: none;
-
     }
-
 
     .section {
-
         padding: 85px 0;
-
     }
-
 
     .company-image img {
-
         height: 350px;
-
     }
-
 
     .service {
-
         grid-template-columns: 45px 1fr 30px;
-
         gap: 15px;
-
     }
-
 
     .service h3 {
-
-        font-size: 22px;
-
+        font-size: 20px;
     }
-
 
     .service p {
-
         font-size: 13px;
-
     }
-
 
     .process-grid {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .process-item {
-
         border-right: none;
-
         border-bottom: 1px solid var(--borda);
-
         margin-right: 0;
-
     }
-
 
     .footer-grid {
-
         grid-template-columns: 1fr;
-
         gap: 40px;
-
     }
-
 
     .hero-buttons {
-
         flex-direction: column;
-
         align-items: flex-start;
-
     }
-
 
 }
 ```
