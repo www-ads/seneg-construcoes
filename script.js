@@ -1,49 +1,88 @@
-```javascript
-// =========================================================
-// SENEG CONSTRUÇÕES
-// JAVASCRIPT PRINCIPAL
-// =========================================================
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+const menuToggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav");
+
+menuToggle.addEventListener("click", () => {
+
+    nav.classList.toggle("open");
+
+});
 
 
-// Seleciona todos os links que apontam para
-// alguma seção da própria página.
+/* =========================================================
+   FECHAR MENU AO CLICAR
+========================================================= */
 
-const links = document.querySelectorAll('a[href^="#"]');
+const navLinks = document.querySelectorAll(".nav-link");
 
+navLinks.forEach(link => {
 
-// Percorre cada link.
+    link.addEventListener("click", () => {
 
-links.forEach(link => {
+        nav.classList.remove("open");
 
+    });
 
-    // Detecta quando o usuário clicar.
-
-    link.addEventListener("click", function(event) {
-
-
-        // Impede o comportamento padrão do navegador.
-
-        event.preventDefault();
+});
 
 
-        // Descobre qual seção foi selecionada.
+/* =========================================================
+   HEADER AO ROLAR
+========================================================= */
 
-        const destino = document.querySelector(
-            this.getAttribute("href")
-        );
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
 
 
-        // Faz uma rolagem suave até a seção.
+/* =========================================================
+   LINK ATIVO DO MENU
+========================================================= */
 
-        if (destino) {
+const sections = document.querySelectorAll("section[id]");
 
-            destino.scrollIntoView({
-                behavior: "smooth"
-            });
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${current}`) {
+
+            link.classList.add("active");
 
         }
 
     });
 
 });
-```
